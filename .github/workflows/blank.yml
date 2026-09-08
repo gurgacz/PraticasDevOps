@@ -1,0 +1,18 @@
+name: Teste De Action do Henrique
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+   Listar:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Job iniciado automaticamente"
+      - name: Copiando codigo para o ambiente do GitHub Actions
+        uses: actions/checkout@v4
+      - run: echo "O repositório ${{ github.repository }} foi clonado no servidor do Github."
+      - name: Listando arquivos copiados para o ambiente do GitHub Actions
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "Pipeline Encerrado"
+
+
